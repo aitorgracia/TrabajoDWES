@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cookie</title>
+</head>
+<body>
+    <form action="ejerciciocookie.php" method="post">
+
+        <h1>Elige idioma: </h1>
+
+        <label for="idioma1">Inglés</label>
+        <input type="radio" name="preferencias[]" id="idioma1" value="ingles">
+        <label for="idioma2">Español</label>
+        <input type="radio" name="preferencias[]" id="idioma2" value="espagnol">
+        <label for="idioma3">Alemán</label>
+        <input type="radio" name="preferencias[]" id="idioma3" value="aleman">
+
+        <br>
+
+        <h1>Elige marca: </h1>
+
+        <label for="marca1">Audi</label>
+        <input type="radio" name="preferencias[]" id="marca1" value="audi">
+        <label for="marca2">Seat</label>
+        <input type="radio" name="preferencias[]" id="marca2" value="seat">
+        <label for="marca3">Volvo</label>
+        <input type="radio" name="preferencias[]" id="marca3" value="volvo">
+
+        <br>
+
+        <input type="submit" value="enviar">
+    </form>
+
+</body>
+</html>

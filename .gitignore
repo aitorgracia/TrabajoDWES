@@ -1,4 +1,5 @@
-data/*
+!data/*
 !data/web1
 !data/web2
 !data/init-db
+!data/ejercicios/*
