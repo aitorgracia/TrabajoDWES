@@ -28,7 +28,7 @@
             {
                 if($_POST["numero2"] == 0)
                 {
-                    echo"Esa operación es incalculable";
+                    echo"Esa operación es incalculable<br>";
                 }
             }
             
