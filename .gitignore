@@ -3,4 +3,5 @@
 !data/web2
 !data/init-db
 !data/ejercicios/*
-!data/db/*
+data/db/*
+code
