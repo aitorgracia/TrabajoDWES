@@ -12,8 +12,9 @@
     require('views/header.php');
 
     ?>
+    <hr>
     <h1>Home de <?= $this->name ?></h1>
     <br>
-    Vamos a hacer <?= $app->ejercicio ?>
+    Vamos a hacer <?= $this->ejercicio ?>
 </body>
 </html>
