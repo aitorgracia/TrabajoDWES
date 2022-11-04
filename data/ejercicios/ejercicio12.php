@@ -13,7 +13,7 @@
     <?php
     if(isset($_POST) && !empty($_POST)){
 
-        echo 'Nombre:  '.$_POST["nombre"];
+        echo "Nombre:  ".$_POST["nombre"];
     }
      else {
          echo "No se ha enviado nada";

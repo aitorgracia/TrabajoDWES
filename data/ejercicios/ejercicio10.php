@@ -5,10 +5,12 @@ $array1["Alero"]= "Klay Thomson";
 $array1["Escolta"]= "James Harden";
 $array1["Pívot"]= "Giannis Antetokounmpo";
 
+echo"<ul>";
+
 foreach($array1 as $position => $elemento)
 {
 
-    echo'<li>',$position.': '.$elemento.'</li>';
+    echo"<li> $position: $elemento </li>";
 
 }
-echo'</ul>';
+echo"</ul>";

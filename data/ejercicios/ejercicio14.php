@@ -13,29 +13,33 @@
             if($_POST['operacion'] == 'suma')
             {
             $operacion = $numero1+$numero2;
-            echo('La solucion es: '.$operacion);
+            echo"La solucion es: $operacion";
             }
             else if($_POST['operacion'] == 'resta')
             {
             $operacion = $numero1-$numero2;
-            echo('La solucion es: '.$operacion);
+            echo"La solucion es: $operacion";
             }
             else if($_POST['operacion'] == 'multiplicacion')
             {
             $operacion = $numero1*$numero2;
-            echo('La solucion es: '.$operacion);
+            echo"La solucion es: $operacion";
             }
             else if($_POST['operacion'] == 'division')
             {
             $operacion = $numero1/$numero2;
-            echo('La solucion es: '.$operacion.'<br>');
-            echo('<p><a href="ejercicio14.php">Volver</a></p>');
+            echo"La solucion es: $operacion <br>".
+            '<p><a href="ejercicio14.php">Volver</a></p>';
             }
         }
         else
         {
             form('');
         }
+
+        /*Este método tiene la misma función y mismo nombre que la del anterior y los parametros que le introduces tienen exactamente
+        el mismo cometido, mas en este caso $info sirve para informar al usuario de que la operación que ha introducido es incalculable,
+        en este caso, cualquier número entre cero.*/
 
 function form ($info)
 {

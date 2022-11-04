@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html><head>
+<html>
+    <head>
         <meta charset="UTF-8">
         <title>ejercicio16</title>
-</head>
+    </head>
     <body>
         <h2>Formulario</h2>
         <form action="">
@@ -16,13 +17,13 @@
 
                 foreach($_GET['nombres'] as $nombre)
                 {
-                    echo('<input type="hidden" name="nombres[]" value="'.$nombre.'">');
-                    echo('<ul><li>'.$nombre.'</li></ul>');
+                    echo'<input type="hidden" name="nombres[]" value="'.$nombre.'">';
+                    echo"<ul><li>$nombre</li></ul>";
                 }
 
             }
             else {
-                echo ("No se ha enviado nada");
+                echo "No se ha enviado nada";
             }
             ?>
         </form>

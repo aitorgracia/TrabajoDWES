@@ -7,11 +7,17 @@ for($i = 2;$i < numero; $i++)
 {
     if(numero % $i == 0)
     {
-        echo $i.'<br>';
+        echo "$i <br>";
         $primo = false;
     }
 }
 if($primo)
     {
-        echo (numero.' es primo.');
+        echo numero." es primo.";
     }
+else
+{
+
+    echo numero." no es primo";
+
+}

@@ -18,7 +18,7 @@
 
             foreach($_POST['nombre'] as $nombre)
             {
-                echo($nombre . '<br>');
+                echo"$nombre <br>";
             }
 
         }

@@ -3,10 +3,15 @@
 class App
 {
 
+  /*Este constructor decidí usarlo para iniciar la sesion en la pagina web, ya que lo que hace el index principal
+  es crear un objeto de esta clase, por lo tanto, el constructor se ejecuta e inicia la sesión.*/
+
   function __construct()
   {
     session_start();   
   }
+
+  /*Esta función run hace exactamente lo mismo que la anterior */
 
   public function run()
   {
@@ -19,6 +24,10 @@ class App
     $this->$method();      
   }
 
+  /*Esta función sirve para iniciar sesion en la página web y se llama por defecto cuando entras en la web por primera vez y cuando cierras sesion.
+    Si al llamar a esta funcion, tienes la sesion iniciada, te redirecciona directamente al home, si no, cierra la sesión que has abierto y te muestra
+    el login de la carpeta views*/
+
   public function login()
   {
     if (isset($_SESSION['name'])) 
@@ -26,7 +35,11 @@ class App
       header('Location: ?method=home');
       return;
     }
-    include('views/login.php');
+    else
+    {
+      setcookie(session_name(),'',time() -7200,'/');
+      include('views/login.php');
+    }
   }
 
   public function auth()
