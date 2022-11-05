@@ -21,7 +21,7 @@
     El parametro $info1 modifica el h3, lo he usado para dar la bienvenida al usuario o para
     hacerle saber que el nombre ha de ser mayor de tres carácteres. $info2 lo he usado para modificar el valor del imput del nombre, ahí
     he vuelto a mostrar el nombre menor a tres carácteres que el usuario ha introducido. Por último, $info3 lo he usado para mostrar el nombre
-    introducido en el formulario mediante el método POST */
+    introducido en el formulario mediante el método POST.*/
 
     function form ($info1,$info2,$info3)
     {

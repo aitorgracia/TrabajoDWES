@@ -12,7 +12,7 @@ class App
     }
 
     /*Esta función la ejecuto en el index principal, el que esta fuera de la carpeta views, sirve para redireccionar a otras funciones de
-    la clase*/
+    la clase.*/
 
     public function run()
     {
@@ -32,14 +32,14 @@ class App
         $this->$method();
     }
 
-    /*Esta función muestra la información del index de la carpeta views*/
+    /*Esta función muestra la información del index de la carpeta views.*/
 
     public function index()
     {
       include('views/index.php');
     }
 
-    /*Esta función muestra la información del header y muestra la sucesion de fibonacci después*/
+    /*Esta función muestra la información del header y muestra la sucesion de fibonacci después.*/
 
     public function fibonacci()
     {
@@ -67,29 +67,24 @@ class App
         }
     }   
 
-    /*Esta función muestra la información del header y muestra las potencias de dos hasta 2²⁴ después*/
+    /*Esta función muestra la información del header y muestra las potencias de dos hasta 2²⁴ después.*/
 
     public function potencia()
     {
         include('views/header.html');
         echo('<hr><br>');
 
+        $num = 1;
         for($i=1;$i<=24;$i++)
-        {
-            $num = 1;
-            for($j=0;$j<=$i;$j++)
-            {
-                
-                $num = $num*2;
-
-            }
-            echo($num.'<br>');
+        {  
+            $num = $num*2;
+            echo"2^$i= $num<br>";
         }
     
     }
 
     /*Esta función muestra la información del header y muestra los factoriales 
-    hasta que el resultado sea igual o mayor que un millón después*/
+    hasta que el resultado sea igual o mayor que un millón después.*/
 
     public function factorial()
     {
@@ -103,14 +98,14 @@ class App
             
             if($num <=1000000)
             {
-            echo($i.'! = ');
+            echo"$i! = ";
             echo"$num<br>";
             }
         }
     
     }
 
-    /*Esta función muestra la información del header y muestra todos los primos hasta el 10000 después*/
+    /*Esta función muestra la información del header y muestra todos los primos hasta el 10000 después.*/
 
     public function primos()
     {
@@ -137,11 +132,3 @@ class App
     }   
 }    
 ?>
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/default.css">
-    </head>
-</html>

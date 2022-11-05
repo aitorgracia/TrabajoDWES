@@ -11,7 +11,7 @@ class App
     session_start();   
   }
 
-  /*Esta función run hace lo mismo que la del ejercicio 17 llamada igual*/
+  /*Esta función run hace lo mismo que la del ejercicio 17 llamada igual.*/
 
   public function run()
   {
@@ -61,7 +61,7 @@ class App
     header('Location: index.php?method=home');
   }
 
-  /*Esta función controla primeramente que se haya iniciado sesión, si no te devuelve a la función login, luego muestra el archivo home de la carpeta views*/
+  /*Esta función controla primeramente que se haya iniciado sesión, si no te devuelve a la función login, luego muestra el archivo home de la carpeta views.*/
 
   public function home()
   {
@@ -72,7 +72,7 @@ class App
     include('views/home.php');
   }
 
-  /*Esta función añade a la lista de deseos asociada a la sesión un deseo nuevo y te lleva a la función home*/
+  /*Esta función añade a la lista de deseos asociada a la sesión un deseo nuevo y te lleva a la función home.*/
 
   public function new()
   {
@@ -83,7 +83,7 @@ class App
     header('Location: index.php?method=home');
   }
 
-  /*Esta función borra un deseo por id de la lista de deseos asociada de la sesión y te lleva a la función home*/
+  /*Esta función borra un deseo por id de la lista de deseos asociada de la sesión y te lleva a la función home.*/
 
   public function delete()
   {
@@ -94,7 +94,7 @@ class App
     header('Location: index.php?method=home');
   }
 
-  /*La función empty vacía la lista de deseos asociada a la sesión, luego ejecuta el métod home*/
+  /*La función empty vacía la lista de deseos asociada a la sesión, luego ejecuta el métod home.*/
 
   public function empty()
   {
@@ -102,7 +102,7 @@ class App
     header('Location: index.php?method=home');    
   }
 
-  /*Este método elimina la información de sesión y borra la cookie de la sesion y te lleva a la función login*/
+  /*Este método elimina la información de sesión y borra la cookie de la sesion y te lleva a la función login.*/
 
   public function close()
   {

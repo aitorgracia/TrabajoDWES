@@ -3,14 +3,14 @@
 class App
 {
 
-  /*Este constructor hace lo mismo que el constructor de la clase App del ejercicio 18*/
+  /*Este constructor hace lo mismo que el constructor de la clase App del ejercicio 18.*/
 
   public function __construct()
   {
     session_start();    
   }
 
-   /*Esta función run hace lo mismo que la del ejercicio 17 llamada igual*/
+   /*Esta función run hace lo mismo que la del ejercicio 17 llamada igual.*/
 
   public function run()
     {
@@ -23,7 +23,7 @@ class App
       $this->$method();      
     }
 
-    /*Los siguientes métodos funcionan exactamente igual que los de el ejercicio anterior, pero gestionando sesiones en vez de cookies*/
+    /*Los siguientes métodos funcionan exactamente igual que los de el ejercicio anterior, pero gestionando sesiones en vez de cookies.*/
      
     public function home()
     {
