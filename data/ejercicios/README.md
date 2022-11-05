@@ -1,4 +1,3 @@
 # Ejercicios PHP
 
-- Repositorio con ejercicios sencillos de PHP
-- Se adjuntan ejemplos explicativos y después de cada uno se plantean ejercicios para realizar por el alumno.
+-He reconfigurado el index principal de la carpeta ejercicios para que se pueda navegar entre los ejercicios clickando encima de sus links correspondientes

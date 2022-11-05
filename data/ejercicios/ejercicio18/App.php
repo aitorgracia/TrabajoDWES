@@ -11,7 +11,7 @@ class App
     session_start();   
   }
 
-  /*Esta función run hace exactamente lo mismo que la anterior */
+  /*Esta función run hace lo mismo que la del ejercicio 17 llamada igual*/
 
   public function run()
   {
@@ -25,10 +25,10 @@ class App
   }
 
   /*Esta función sirve para iniciar sesion en la página web y se llama por defecto cuando entras en la web por primera vez y cuando cierras sesion.
-    Si al llamar a esta funcion, tienes la sesion iniciada, te redirecciona directamente al home, si no, cierra la sesión que has abierto y te muestra
-    el login de la carpeta views*/
+    Si al llamar a esta funcion, tienes la sesion iniciada, te redirecciona directamente al home, si no, cierra la sesión ya abierta y te muestra
+    el login de la carpeta views.*/
 
-  public function login()
+  public function login() 
   {
     if (isset($_SESSION['name'])) 
     {
@@ -41,6 +41,10 @@ class App
       include('views/login.php');
     }
   }
+
+    /*Esta función se llama al pulsar el botón de login en la pantalla de login, esta codificado de tal manera de que puedas logearte sin contraseña,
+    si el formulario envía un POST con un nombre se crea una sesion cuyo nombre y contraseña son los introducidos y también se le asigna una lista vacía para los deseos.
+      Si se llega a la función sin haber enviado un POST, el método te devuelve a la función login.*/
 
   public function auth()
   {
@@ -56,55 +60,49 @@ class App
     $_SESSION['deseos'] = [];
     header('Location: index.php?method=home');
   }
+
+  /*Esta función controla primeramente que se haya iniciado sesión, si no te devuelve a la función login, luego muestra el archivo home de la carpeta views*/
+
   public function home()
   {
     if (!isset($_SESSION['name'])) {
       header('Location: ?method=login');
       return;
     }
-    if (isset($_SESION['deseos'])) {
-      $deseos = $_SESION['deseos'];
-    } else {
-      $deseos = [];
-    }
     include('views/home.php');
   }
 
+  /*Esta función añade a la lista de deseos asociada a la sesión un deseo nuevo y te lleva a la función home*/
+
   public function new()
   {
-    if (!isset($_POST['new'])) {
-      header('Location: index.php?method=home');
-      return;
-    }
     $new = $_POST['new'];
-    if (isset($_SESSION['deseos'])) {
-      $deseos = $_SESSION['deseos'];
-    } else {
-      $deseos = [];
-    }
+    $deseos = $_SESSION['deseos'];
     $deseos[] = $new;
     $_SESSION['deseos'] = $deseos;
     header('Location: index.php?method=home');
   }
 
+  /*Esta función borra un deseo por id de la lista de deseos asociada de la sesión y te lleva a la función home*/
+
   public function delete()
   {
-    if (isset($_SESSION['deseos'])) {
-      $deseos = $_SESSION['deseos'];
-    } else {
-      $deseos = [];
-    }
+    $deseos = $_SESSION['deseos'];
     $id = $_GET['id'];
     unset($deseos[$id]);
     $_SESSION['deseos'] = $deseos;
     header('Location: index.php?method=home');
   }
 
+  /*La función empty vacía la lista de deseos asociada a la sesión, luego ejecuta el métod home*/
+
   public function empty()
   {
     $_SESSION['deseos']=[];
     header('Location: index.php?method=home');    
   }
+
+  /*Este método elimina la información de sesión y borra la cookie de la sesion y te lleva a la función login*/
 
   public function close()
   {

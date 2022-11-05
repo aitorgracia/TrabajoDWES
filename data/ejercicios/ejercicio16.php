@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>ejercicio16</title>
+        <title>Ejercicio16</title>
     </head>
     <body>
         <h2>Formulario</h2>
@@ -13,18 +13,18 @@
             <hr>
             <h2>Datos recibidos</h2>
             <?php
-            if(isset($_GET['nombres'])){
-
-                foreach($_GET['nombres'] as $nombre)
+                if(isset($_GET['nombres']))
                 {
-                    echo'<input type="hidden" name="nombres[]" value="'.$nombre.'">';
-                    echo"<ul><li>$nombre</li></ul>";
+                    foreach($_GET['nombres'] as $nombre)
+                    {
+                        echo'<input type="hidden" name="nombres[]" value="'.$nombre.'">';
+                        echo"<ul><li>$nombre</li></ul>";
+                    }
                 }
-
-            }
-            else {
-                echo "No se ha enviado nada";
-            }
+                else 
+                {
+                    echo "No se ha enviado nada";
+                }
             ?>
         </form>
     </body>

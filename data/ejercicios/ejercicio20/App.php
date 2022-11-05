@@ -2,12 +2,17 @@
 
 class App
 {
+
+  /*Este constructor hace lo mismo que el constructor de la clase App del ejercicio 18*/
+
   public function __construct()
   {
     session_start();    
   }
 
-    public function run()
+   /*Esta función run hace lo mismo que la del ejercicio 17 llamada igual*/
+
+  public function run()
     {
       if (isset($_GET['method'])) {
         $method = $_GET['method'];
@@ -18,7 +23,7 @@ class App
       $this->$method();      
     }
 
-
+    /*Los siguientes métodos funcionan exactamente igual que los de el ejercicio anterior, pero gestionando sesiones en vez de cookies*/
      
     public function home()
     {
@@ -27,16 +32,12 @@ class App
       
       header('Location: index.php?method=colores');
      
-    }else{
-      include('views/colores.php');
+    }
+    else{
+      include('views/colores.html');
         
     }
-    
-    
   }
-
- 
-
 
   public function cambio(){
 
@@ -50,19 +51,15 @@ class App
 
   
   public function colores(){
-
-    
-
-    if(($_SESSION['color']) == "red"){
-        echo '<body style="background-color:red">';
-    }
-    if(($_SESSION['color']) == "blue"){
-        echo '<body style="background-color:blue">';
-    }
-    if(($_SESSION['color']) =="green"){
-        echo '<body style="background-color:green">';
-    }
+    echo '<body style="background-color:'.$_SESSION['color'].'">';
     include('views/home.php');
 
-}
+  }
+
+  public function borrar(){
+    session_destroy();
+    include('views/colores.html');
+
+  }
+
 }
